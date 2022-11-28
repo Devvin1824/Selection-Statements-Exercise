@@ -4,27 +4,68 @@
     {
         static void Main(string[] args)
         {
+            
             var r = new Random();
             var favNumber = r.Next(1,1000);
             Console.WriteLine("Try to guess my favorite number");
             var userInput = int.Parse(Console.ReadLine());
-            
-            if (userInput < favNumber)
+            bool car = true;
+
+            while (car)
             {
-                Console.WriteLine("Too low");
+                if (userInput < favNumber)
+                {
+                    Console.WriteLine("Too low, try again.");
+                    Console.WriteLine("Try to guess my favorite number");
+                    userInput = int.Parse(Console.ReadLine());
+                }
+                else if (userInput > favNumber)
+                {
+                    Console.WriteLine("Too high, try again.");
+                    Console.WriteLine("Try to guess my favorite number");
+                    userInput = int.Parse(Console.ReadLine());
+                }
+                else
+                {
+                    Console.WriteLine("Congratulations, you guessed it!");
+                    car = false;
+                }
             }
-            else if (userInput > favNumber)
-            {
-                Console.WriteLine("Too high");
-            }
-            else 
-            {
-                Console.WriteLine("Congratulations, you guessed it!");
-            }
-            
 
             // let user enter another guess 
             // Exercise 2 
+
+            Console.WriteLine("What is your favorite subject in school?");
+            var favSubject = (Console.ReadLine());
+            switch (favSubject)
+            {
+                case "math":
+                case "Math":
+                    Console.WriteLine("Your favorite subject is math, alot of people don't like math");
+                    break;
+                case "history":
+                case "History":
+                    Console.WriteLine("Your favorite subject is history, don't let the past repeat itself!");
+                    break;
+                case "science":
+                case "Science":
+                    Console.WriteLine("Your favorite subject is science, we need more scientists!");
+                    break;
+                case "english":
+                case "English":
+                    Console.WriteLine("Your favorite subject is english, do you like poetry?");
+                    break;
+                case "anatomy":
+                case "Anatomy":
+                    Console.WriteLine("Your favorite subject is anatomy, what is your favorite part about the human body?");
+                    break;
+                default:
+                    Console.WriteLine($"Your favorite subject is {favSubject}, that is really interesting!");
+                    break;
+            }
+
+
+
 
             
 
