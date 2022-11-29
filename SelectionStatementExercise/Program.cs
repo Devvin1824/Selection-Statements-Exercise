@@ -37,26 +37,21 @@
 
             Console.WriteLine("What is your favorite subject in school?");
             var favSubject = (Console.ReadLine());
-            switch (favSubject)
+            switch (favSubject.ToLower())
             {
                 case "math":
-                case "Math":
                     Console.WriteLine("Your favorite subject is math, alot of people don't like math");
                     break;
                 case "history":
-                case "History":
                     Console.WriteLine("Your favorite subject is history, don't let the past repeat itself!");
                     break;
                 case "science":
-                case "Science":
                     Console.WriteLine("Your favorite subject is science, we need more scientists!");
                     break;
                 case "english":
-                case "English":
                     Console.WriteLine("Your favorite subject is english, do you like poetry?");
                     break;
                 case "anatomy":
-                case "Anatomy":
                     Console.WriteLine("Your favorite subject is anatomy, what is your favorite part about the human body?");
                     break;
                 default:
